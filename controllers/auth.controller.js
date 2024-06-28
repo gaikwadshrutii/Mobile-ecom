@@ -42,7 +42,7 @@ exports.logoutAdmin = asyncHandler(async (req, res) => {
 
 // User Auth
 exports.registerUser = asyncHandler(async (req, res) => {
-    const { password, email } = req.body
+    const { name, password, email } = req.body
     const isFound = await User.findOne({ email })
     if (isFound) {
         return res.status(401).json({ message: "Email Already Exist" })
